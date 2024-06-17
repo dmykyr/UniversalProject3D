@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.07
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 022e71752654d3f4fa0cbe71b312ad20, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bbe9494f815f3c340956427c884b72a0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 194d5177e940eb84eaf6c3628759ceec, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 559697082}
   - component: {fileID: 559697081}
   m_Layer: 0
-  m_Name: Cube Boss (1)
+  m_Name: Cube_Boss 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 653196422}
   - component: {fileID: 653196421}
   m_Layer: 0
-  m_Name: Resource_Gold (2)
+  m_Name: Resource_Gold 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 750187984}
   - component: {fileID: 750187987}
   m_Layer: 5
-  m_Name: BtnPause
+  m_Name: Pause_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2170,7 +2170,7 @@ GameObject:
   - component: {fileID: 818894516}
   - component: {fileID: 818894515}
   m_Layer: 0
-  m_Name: Cube Boss
+  m_Name: Cube_Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2279,7 +2279,7 @@ GameObject:
   - component: {fileID: 831879142}
   - component: {fileID: 831879141}
   m_Layer: 0
-  m_Name: Resource_Gold (1)
+  m_Name: Resource_Gold 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2991,7 +2991,7 @@ GameObject:
   - component: {fileID: 1030579476}
   - component: {fileID: 1030579475}
   m_Layer: 0
-  m_Name: Resource_Gold (3)
+  m_Name: Resource_Gold 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3422,7 +3422,7 @@ GameObject:
   - component: {fileID: 1134360264}
   - component: {fileID: 1134360268}
   m_Layer: 0
-  m_Name: Frined_Player2
+  m_Name: Friend_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3598,7 +3598,7 @@ GameObject:
   - component: {fileID: 1208406531}
   - component: {fileID: 1208406530}
   m_Layer: 0
-  m_Name: Cube Boss (5)
+  m_Name: Cube_Boss 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4135,7 +4135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.06
+      value: 29.269995
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4143,11 +4143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.98
+      value: 48.49998
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.82754606
+      value: 0.83351207
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4155,7 +4155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5613979
+      value: -0.5525012
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4167,7 +4167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -68.305
+      value: -67.078
       objectReference: {fileID: 0}
     - target: {fileID: 657906292706535316, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4175,7 +4175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8282453734043031796, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_Name
-      value: Props_14
+      value: Visual_Finish_Line
       objectReference: {fileID: 0}
     - target: {fileID: 8987223841097511971, guid: d2be97095b8b6714481f3b961928dd87, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4607,7 +4607,7 @@ GameObject:
   - component: {fileID: 1748352528}
   - component: {fileID: 1748352527}
   m_Layer: 0
-  m_Name: Cube Boss (3)
+  m_Name: Cube_Boss 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4948,13 +4948,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821208676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.19454002, z: -0, w: 0.98089457}
-  m_LocalPosition: {x: 28.89, y: 2.91, z: 46.57}
+  m_LocalRotation: {x: -0, y: 0.1982485, z: -0, w: 0.98015183}
+  m_LocalPosition: {x: 29.69, y: 2.91, z: 48.5}
   m_LocalScale: {x: 19.046999, y: 4.983397, z: 0.49479}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 22.436, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 22.869, z: 0}
 --- !u!114 &1821208681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5080,7 +5080,7 @@ GameObject:
   - component: {fileID: 2005290630}
   - component: {fileID: 2005290629}
   m_Layer: 0
-  m_Name: Cube Boss (2)
+  m_Name: Cube_Boss 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5292,7 +5292,7 @@ GameObject:
   - component: {fileID: 2087406671}
   - component: {fileID: 2087406670}
   m_Layer: 0
-  m_Name: Cube Boss (4)
+  m_Name: Cube_Boss 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5447,7 +5447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d35ea29c48c3e1944a4f03cab15e36c2, type: 2}
+  - {fileID: 2100000, guid: 059cceb0ba6e50741bfe6ec2c755d5f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
