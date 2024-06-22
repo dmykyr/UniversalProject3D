@@ -6,14 +6,14 @@ public class GoldResource : MonoBehaviour
 {
     public float speed_Rotation = 100f;
     private TextMeshProUGUI goldAmountText;
-    private Player_Controller player;
+    private PlayerMovement player;
 
     public void Start()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
-            player = playerObject.GetComponent<Player_Controller>();
+            player = playerObject.GetComponent<PlayerMovement>();
         }
 
         GameObject textObject = GameObject.Find("Gold_Amount_Text");
