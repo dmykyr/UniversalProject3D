@@ -6,14 +6,14 @@ public class GoldResource : MonoBehaviour
 {
     public float speed_Rotation = 100f;
     private TextMeshProUGUI goldAmountText;
-    private PlayerMovement player;
+    private CharacterMovement character;
 
     public void Start()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
-            player = playerObject.GetComponent<PlayerMovement>();
+            character = playerObject.GetComponent<CharacterMovement>();
         }
 
         GameObject textObject = GameObject.Find("Gold_Amount_Text");
@@ -24,9 +24,8 @@ public class GoldResource : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Підібрали монету!");
-            player.GoldAmount++;
-            goldAmountText.text = player.GoldAmount.ToString();
+            character.GoldAmount++;
+            goldAmountText.text = character.GoldAmount.ToString();
             Destroy(gameObject);
         }
     }

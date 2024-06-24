@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     private int _goldAmount = 0;
     public int GoldAmount { get => _goldAmount; set => _goldAmount = value; }
@@ -8,13 +8,16 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5.0f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.7f;
-
-    private CharacterController controller;
-    private Vector3 velocity;
     private bool isGrounded;
+
+    private Vector3 velocity;
+    private CharacterController controller;
+    private Animator animator;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,13 +33,16 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * moveHorizontal + transform.forward * moveVertical;
-        controller.Move(move * speed * Time.deltaTime);
+        animator.SetBool("IsWalking", move.magnitude > 0);
+        controller.Move(speed * Time.deltaTime * move);
+
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
+            animator.SetTrigger("JumpTrigger");
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }

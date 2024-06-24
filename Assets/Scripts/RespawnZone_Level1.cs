@@ -8,8 +8,7 @@ public class RespawnZone_Level1 : MonoBehaviour
      {  
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);             
-            Debug.Log("Respawn Level");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
      }
 }
