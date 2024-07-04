@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private int _goldAmount = 0;
-    public int GoldAmount { get => _goldAmount; set => _goldAmount = value; }
-
     public float speed = 5.0f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.7f;

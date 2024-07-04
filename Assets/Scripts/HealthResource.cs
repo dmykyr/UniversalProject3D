@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-public class GoldResource : MonoBehaviour
+public class HealthResource : MonoBehaviour
 {
     public float speed_Rotation = 100f;
     private GameManager gameManager;
@@ -17,7 +16,7 @@ public class GoldResource : MonoBehaviour
         {
             if (gameManager != null)
             {
-                gameManager.CoinsAmount++;
+                gameManager.HealthAmount++;
             }
 
             Destroy(gameObject);
