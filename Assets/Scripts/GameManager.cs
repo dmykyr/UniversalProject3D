@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static int currentLevel;
     public static event Action<int> OnHealthAmountChanged;
     public static event Action<int> OnCoinsAmountChanged;
 

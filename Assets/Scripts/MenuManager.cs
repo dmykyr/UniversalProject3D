@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class MenuManager : MonoBehaviour
         textObject = GameObject.Find("Gold_Amount_Text");
         goldAmountText = textObject.GetComponent<TextMeshProUGUI>();
 
-        goldAmountText.text = GameManager.instance.CoinsAmount.ToString();
-        healthAmountText.text = GameManager.instance.HealthAmount.ToString();
+        GameManager gameManager = GameManager.instance;
+        if(gameManager != null)
+        {
+            goldAmountText.text = gameManager.CoinsAmount.ToString();
+            healthAmountText.text = gameManager.HealthAmount.ToString();
+        }
     }
 
     private void CoinsAmountChanged(int newCoinsAmount)
