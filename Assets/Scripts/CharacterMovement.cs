@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public float horizontalSpeed = 2.0f;
+
     public float speed = 5.0f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.7f;
@@ -19,6 +21,9 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        float h = horizontalSpeed * Input.GetAxis("Mouse X");
+        transform.Rotate(0, h, 0);
+
         isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
