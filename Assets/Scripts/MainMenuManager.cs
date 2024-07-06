@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,13 +15,14 @@ public class MainMenuManager : MonoBehaviour
 
     private void StartPlay()
     {
-        GameManager.currentLevel = 1;
-        SceneManager.LoadScene("LoadingPage");
+        GameManager.currentScene = GameManager.scenes["Woods"];
+        SceneManager.LoadScene(GameManager.scenes["Loading"]);
     }
 
     private void ChooseStage()
     {
-
+        GameManager.currentScene = GameManager.scenes["SelectLevel"];
+        SceneManager.LoadScene(GameManager.scenes["Loading"]);
     }
 
     private void ExitFunction()

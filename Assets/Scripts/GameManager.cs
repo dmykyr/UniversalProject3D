@@ -1,12 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static int currentLevel;
+    public static string currentScene;
+
     public static event Action<int> OnHealthAmountChanged;
     public static event Action<int> OnCoinsAmountChanged;
+
+    public static readonly Dictionary<string, string> scenes = new()
+    {
+        { "Woods", "Level_1"},
+        { "Islands", "Level_2"},
+        { "City", "Level_3"},
+        { "MainMenu", "MainMenu"},
+        { "SelectLevel", "SelectLevel"},
+        { "Loading", "Loading"},
+    };
 
     private int _coins;
     private int _health;

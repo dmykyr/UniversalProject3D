@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadingPageScript : MonoBehaviour
+public class LoadingScript : MonoBehaviour
 {
     private Slider sliderLoadingBar;
     private TextMeshProUGUI textLoadingBar;
@@ -17,8 +17,7 @@ public class LoadingPageScript : MonoBehaviour
         GameObject loadingBar = GameObject.Find("Slider_LoadingBar");
         sliderLoadingBar = loadingBar.GetComponent<Slider>();
 
-        //int levelToLoad = GameManager.currentLevel;
-        //StartCoroutine(LoadLevelAsync($"Level_{levelToLoad}"));
+        //StartCoroutine(LoadLevelAsync(GameManager.currentScene));
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class LoadingPageScript : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene($"Level_{GameManager.currentLevel}");
+            SceneManager.LoadScene(GameManager.currentScene);
         }
     }
 
