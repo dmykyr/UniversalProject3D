@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static string currentScene;
 
     public static event Action<int> OnHealthAmountChanged;
+    public static event Action OnCharacterDead;
     public static event Action<int> OnCoinsAmountChanged;
 
     public static readonly Dictionary<string, string> scenes = new()
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             OnHealthAmountChanged?.Invoke(value);
             _health = value;
+            if (_health <= 0) OnCharacterDead.Invoke();
         }
     }
 
@@ -50,6 +52,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CoinsAmount = 0;
-        HealthAmount = 3;
+        HealthAmount = 100;
     }
 }

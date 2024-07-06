@@ -16,7 +16,7 @@ public class HealthResource : MonoBehaviour
         {
             if (gameManager != null)
             {
-                gameManager.HealthAmount++;
+                gameManager.HealthAmount += 20;
             }
 
             Destroy(gameObject);

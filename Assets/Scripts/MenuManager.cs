@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject deathScreen;
+
     private TextMeshProUGUI goldAmountText;
     private TextMeshProUGUI healthAmountText;
 
@@ -10,6 +12,7 @@ public class MenuManager : MonoBehaviour
     {
         GameManager.OnCoinsAmountChanged += CoinsAmountChanged;
         GameManager.OnHealthAmountChanged += HealthAmountChanged;
+        GameManager.OnCharacterDead += CharacterHasDead;
 
         GameObject textObject = GameObject.Find("Health_Amount_Text");
         healthAmountText = textObject.GetComponent<TextMeshProUGUI>();
@@ -33,6 +36,13 @@ public class MenuManager : MonoBehaviour
     private void HealthAmountChanged(int newHealthAmount)
     {
         healthAmountText.text = newHealthAmount.ToString();
+    }
+
+    private void CharacterHasDead()
+    {
+        Time.timeScale = 0;
+
+        deathScreen.SetActive(true);
     }
 
     private void OnDestroy()
