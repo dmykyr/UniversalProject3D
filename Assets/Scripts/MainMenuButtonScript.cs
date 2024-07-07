@@ -5,6 +5,6 @@ public class MainMenuButtonScript : MonoBehaviour
 {
     public void HandleBtnClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(GameManager.scenes["MainMenu"]);
     }
 }

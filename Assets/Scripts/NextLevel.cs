@@ -7,6 +7,12 @@ public class NextLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager gameManager = GameManager.instance;
+            if (gameManager != null)
+            {
+                gameManager.SaveCurrentResourceValues();
+            }
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class RespawnZone_Level1 : MonoBehaviour
+public class Respawn : MonoBehaviour
 {
      private void OnTriggerEnter(Collider other)
      {  

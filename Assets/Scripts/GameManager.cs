@@ -21,37 +21,60 @@ public class GameManager : MonoBehaviour
         { "Loading", "Loading"},
     };
 
-    private int _coins;
-    private int _health;
+    // resources that changes while player pass level
+    private int _currentCoins;
+    private int _currentHealth;
+
+    // general resources that do not directly changes on passing level
+    private int _playerCoins;
+    private int _playerHealth;
 
     public int CoinsAmount {
-        get => _coins;
+        get => _currentCoins;
         set { 
             OnCoinsAmountChanged?.Invoke(value);
-            _coins = value;
+            _currentCoins = value;
         } 
     }
 
     public int HealthAmount
     {
-        get => _health;
+        get => _currentHealth;
         set
         {
             OnHealthAmountChanged?.Invoke(value);
-            _health = value;
-            if (_health <= 0) OnCharacterDead.Invoke();
+            _currentHealth = value;
+            if (_currentHealth <= 0) OnCharacterDead.Invoke();
         }
     }
 
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Start()
     {
         CoinsAmount = 0;
         HealthAmount = 100;
+
+        _playerCoins = 0;
+        _playerHealth = 100;
+    }
+
+    public void SaveCurrentResourceValues()
+    {
+        _playerCoins = _currentCoins;
+        _playerHealth = _currentHealth;
+    }
+
+    public void RestoreCurrentResourceValues()
+    {
+        _currentCoins = _playerCoins;
+        _currentHealth = _playerHealth;
     }
 }
