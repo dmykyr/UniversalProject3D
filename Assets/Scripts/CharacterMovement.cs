@@ -3,49 +3,46 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public float horizontalSpeed = 2.0f;
-
     public float speed = 5.0f;
+    public float jumpForce = 5.0f;
     public float gravity = -9.81f;
-    public float jumpHeight = 1.7f;
-    private bool isGrounded;
 
-    private Vector3 velocity;
-    private CharacterController controller;
+    private Rigidbody rb;
     private Animator animator;
 
-    void Start()
+    private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         float h = horizontalSpeed * Input.GetAxis("Mouse X");
         transform.Rotate(0, h, 0);
 
-        isGrounded = controller.isGrounded;
-
-        if (isGrounded && velocity.y < 0)
+        if (IsGrounded() && Input.GetButtonDown("Jump"))
         {
-            velocity.y = -2f;
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            animator.SetTrigger("JumpTrigger");
         }
+    }
 
+    private void FixedUpdate()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * moveHorizontal + transform.forward * moveVertical;
+        rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
+
+        rb.AddForce(Vector3.up * gravity, ForceMode.Acceleration);
+
         animator.SetBool("IsWalking", move.magnitude > 0);
-        controller.Move(speed * Time.deltaTime * move);
+    }
 
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-
-        if (isGrounded && Input.GetButtonDown("Jump"))
-        {
-            animator.SetTrigger("JumpTrigger");
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+    private bool IsGrounded()
+    {
+        return Mathf.Abs(rb.velocity.y) < 0.1f;
     }
 }

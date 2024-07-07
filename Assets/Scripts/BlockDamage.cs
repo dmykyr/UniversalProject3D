@@ -35,6 +35,20 @@ public class BlockDamage : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (gameManager != null)
+            {
+                gameManager.HealthAmount -= ((int)damageType + 1) * 20;
+
+                lastDamageTime = Time.time;
+                canTakeDamage = false;
+            }
+        }
+    }
+
     private void Update()
     {
         if (!canTakeDamage && Time.time - lastDamageTime >= damageCooldown)
