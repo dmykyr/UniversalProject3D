@@ -13,7 +13,16 @@ public class NextLevel : MonoBehaviour
                 gameManager.SaveCurrentResourceValues();
             }
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                SceneManager.LoadScene(GameManager.scenes["MainMenu"]);
+            }
         }
     }
 }
