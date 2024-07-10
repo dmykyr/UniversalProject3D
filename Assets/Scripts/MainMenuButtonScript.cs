@@ -6,5 +6,6 @@ public class MainMenuButtonScript : MonoBehaviour
     public void HandleBtnClick()
     {
         SceneManager.LoadScene(GameManager.scenes["MainMenu"]);
+        Time.timeScale = 1;
     }
 }
