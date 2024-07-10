@@ -23,7 +23,7 @@ public class LevelMenuManager : MonoBehaviour
     private void IslandBtnClick()
     {
         GameManager.currentScene = GameManager.scenes["Islands"] ?? GameManager.scenes["MainMenu"];
-        SceneManager.LoadScene("LoadingPage");
+        SceneManager.LoadScene("Loading");
     }
 
     private void CityBtnClick()
