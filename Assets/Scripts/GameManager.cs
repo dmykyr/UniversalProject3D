@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         { "MainMenu", "MainMenu"},
         { "SelectLevel", "SelectLevel"},
         { "Loading", "Loading"},
+        { "Shop", "Shop"},
     };
 
     // resources that changes while player pass level

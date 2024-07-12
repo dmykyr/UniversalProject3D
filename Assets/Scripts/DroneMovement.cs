@@ -8,6 +8,12 @@ public class DroneMovement : MonoBehaviour
     public float leftOffset = -1f;
     public float heightOffset = 2f;
 
+    private void Start()
+    {
+        DroneManager droneManager = DroneManager.instance;
+        droneManager.ChangeDronePrefab(gameObject, droneManager.drone);
+    }
+
     private void Update()
     {
         if (target != null)
